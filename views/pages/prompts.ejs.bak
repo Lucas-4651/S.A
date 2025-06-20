@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompts - IA Companion</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Prompts</h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/guides">Guides</a>
+      <a href="/astuces">Astuces</a>
+      <a href="/arena">Arena</a>
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Déconnexion</a>
+      <% } else { %>
+        <a href="/login">Connexion</a>
+        <a href="/register">Inscription</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Prompts rédaction</h2>
+    <ul>
+      <% prompts.rédaction.forEach(item => { %>
+        <li><%= item.prompt %></li>
+      <% }) %>
+    </ul>
+
+    <h2>Prompts code</h2>
+    <ul>
+      <% prompts.code.forEach(item => { %>
+        <li><%= item.prompt %></li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>

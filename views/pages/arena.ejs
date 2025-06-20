@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arena - IA Companion</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Prompt Battle Arena</h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/prompts">Prompts</a>
+      <a href="/guides">Guides</a>
+      <a href="/astuces">Astuces</a>
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Déconnexion</a>
+      <% } else { %>
+        <a href="/login">Connexion</a>
+        <a href="/register">Inscription</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Défi de prompts</h2>
+      <p>Voici deux prompts, choisis celui que tu préfères :</p>
+
+      <div style="display: flex; gap: 2rem;">
+        <div style="flex: 1; border: 1px solid #ccc; padding: 1rem;">
+          <h3>Prompt 1</h3>
+          <p><%= p1.prompt %></p>
+          <button>Je choisis celui-ci</button>
+        </div>
+
+        <div style="flex: 1; border: 1px solid #ccc; padding: 1rem;">
+          <h3>Prompt 2</h3>
+          <p><%= p2.prompt %></p>
+          <button>Je choisis celui-ci</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

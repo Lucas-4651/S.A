@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IA Companion - Accueil</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Bienvenue <%= user ? user.username : "Invité" %> sur IA Companion 👋</h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/prompts">Prompts</a>
+      <a href="/guides">Guides</a>
+      <a href="/astuces">Astuces</a>
+      <a href="/arena">Arena</a>
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+      <% } else { %>
+        <a href="/login">Connexion</a>
+        <a href="/register">Inscription</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>💡 Astuce du jour</h2>
+      <blockquote><%= randomTip.texte %></blockquote>
+    </section>
+
+    <section>
+      <h3>Explore ton potentiel avec l’IA 🤖</h3>
+      <p>
+        Accède à des outils puissants, des guides et des idées pour booster ta créativité, productivité et plus encore.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

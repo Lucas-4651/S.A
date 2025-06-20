@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📜 Prompts IA</title>
+  <link rel="stylesheet" href="/styles.css"/>
+  <style>
+    body { font-family: 'Courier New', monospace; background: #111; color: #f0f0f0; padding: 2rem; }
+    h1 { text-align: center; font-size: 2rem; margin-bottom: 2rem; }
+    h2 { color: #00ffd5; margin-top: 2rem; border-bottom: 1px solid #00ffd5; padding-bottom: .5rem; }
+    .prompt-block { background: #222; border-left: 5px solid #00ffd5; padding: 1rem; margin: 1rem 0; border-radius: 8px; position: relative; }
+    .copy-btn {
+      position: absolute; top: 10px; right: 10px; background: #00ffd5; color: #000;
+      border: none; padding: 5px 10px; cursor: pointer; font-weight: bold; border-radius: 4px;
+    }
+    .copy-btn:hover { background: #00bfa0; }
+  </style>
+</head>
+<body>
+  <h1>📜 Prompts Intelligents Classés</h1>
+
+  <% for (let cat in prompts) { %>
+    <h2><%= cat.charAt(0).toUpperCase() + cat.slice(1) %></h2>
+    <% prompts[cat].forEach((p, index) => { %>
+      <div class="prompt-block">
+        <code><%= p.prompt %></code>
+        <button class="copy-btn" onclick="copyPrompt('<%= p.prompt.replace(/'/g, "\\'") %>')">Copier</button>
+      </div>
+    <% }) %>
+  <% } %>
+
+  <script>
+    function copyPrompt(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert('✅ Prompt copié !');
+      }).catch(err => {
+        alert('❌ Erreur : ' + err);
+      });
+    }
+  </script>
+</body>
+</html>

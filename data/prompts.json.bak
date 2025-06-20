@@ -1,0 +1,10 @@
+{
+  "rédaction": [
+    { "prompt": "Écris une lettre de motivation pour un stage en cybersécurité." },
+    { "prompt": "Rédige un article de blog sur les avantages de l’IA dans le marketing digital." }
+  ],
+  "code": [
+    { "prompt": "Crée une API REST en Node.js pour un gestionnaire de tâches." },
+    { "prompt": "Donne-moi un script Python qui scanne les ports d’une IP donnée." }
+  ]
+}

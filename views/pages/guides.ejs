@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guides - IA Companion</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Guides</h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/prompts">Prompts</a>
+      <a href="/astuces">Astuces</a>
+      <a href="/arena">Arena</a>
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Déconnexion</a>
+      <% } else { %>
+        <a href="/login">Connexion</a>
+        <a href="/register">Inscription</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <ul>
+      <% guides.forEach(guide => { %>
+        <li>
+          <h3><%= guide.titre %></h3>
+          <p><%= guide.contenu %></p>
+        </li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>

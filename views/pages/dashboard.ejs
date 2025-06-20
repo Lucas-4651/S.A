@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - IA Companion</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Dashboard - <%= user.username %></h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/prompts">Prompts</a>
+      <a href="/guides">Guides</a>
+      <a href="/astuces">Astuces</a>
+      <a href="/arena">Arena</a>
+      <a href="/logout">Déconnexion</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Historique -->
+    <section>
+      <h2>Historique des Prompts</h2>
+      <% if (user.historique && user.historique.length > 0) { %>
+        <ul>
+          <% user.historique.forEach(item => { %>
+            <li>
+              <code><%= item %></code>
+              <button class="copy-btn" onclick="copyText('<%= item.replace(/'/g, "\\'") %>')">
+                <i class="fas fa-copy"></i> Copier
+              </button>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>Aucun historique pour l'instant.</p>
+      <% } %>
+    </section>
+
+    <!-- Prompts favoris -->
+    <section>
+      <h2>Prompts favoris</h2>
+
+      <% if (user.promptsFavoris && user.promptsFavoris.length > 0) { %>
+
+        <!-- Barre de recherche -->
+        <input type="text" id="searchInput" placeholder="🔍 Rechercher un prompt..." onkeyup="filterPrompts()" style="margin-bottom: 1rem; padding: 0.5rem; width: 100%; border-radius: 8px; border: 1px solid #007bff;"/>
+
+        <!-- Filtres de catégorie -->
+        <div style="margin-bottom: 1rem;">
+          <label for="categorySelect"><strong>Filtrer par catégorie :</strong></label>
+          <select id="categorySelect" onchange="filterPrompts()" style="padding: 0.4rem; border-radius: 6px; margin-left: 1rem;">
+            <option value="all">Toutes</option>
+            <option value="seo">SEO</option>
+            <option value="dev">Développement</option>
+            <option value="business">Business</option>
+            <option value="étude">Études</option>
+          </select>
+        </div>
+
+        <!-- Copier tout -->
+        <button class="copy-btn" style="margin-bottom: 1rem;" onclick="copyAll()">
+          <i class="fas fa-copy"></i> Copier tous les prompts
+        </button>
+
+        <!-- Liste des prompts -->
+        <ul id="promptList">
+          <% user.promptsFavoris.forEach(item => { %>
+            <li data-category="<%= item.category || 'autre' %>">
+              <code><%= item.prompt %></code>
+              <button class="copy-btn" onclick="copyText('<%= item.prompt.replace(/'/g, "\\'") %>')">
+                <i class="fas fa-copy"></i> Copier
+              </button>
+            </li>
+          <% }) %>
+        </ul>
+
+      <% } else { %>
+        <p>Pas encore de favoris.</p>
+      <% } %>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 IA Companion. Tous droits réservés.
+  </footer>
+
+  <!-- Script JS -->
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text)
+        .then(() => alert("✅ Prompt copié !"))
+        .catch(() => alert("❌ Échec de la copie"));
+    }
+
+    function copyAll() {
+      const items = document.querySelectorAll('#promptList code');
+      const text = Array.from(items).map(el => el.textContent).join("\\n\\n");
+      navigator.clipboard.writeText(text)
+        .then(() => alert("✅ Tous les prompts copiés !"))
+        .catch(() => alert("❌ Erreur lors de la copie"));
+    }
+
+    function filterPrompts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const selectedCategory = document.getElementById("categorySelect").value;
+      const listItems = document.querySelectorAll("#promptList li");
+
+      listItems.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        const category = item.dataset.category || "autre";
+        const matchCategory = (selectedCategory === "all") || (category === selectedCategory);
+        const matchSearch = text.includes(input);
+
+        if (matchCategory && matchSearch) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+/* === RESET & BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #e6f0ff; /* Bleu très clair */
+  color: #003366; /* Bleu marine foncé pour texte */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === HEADER === */
+header {
+  background: #ffffffcc; /* Blanc transparent */
+  color: #0047b3;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #007bff;
+  box-shadow: 0 0 15px #007bff88;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-shadow: 0 0 10px #007bff;
+}
+
+nav a {
+  margin-left: 1rem;
+  color: #0059c1;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #007bff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* === MAIN === */
+main {
+  flex: 1;
+  padding: 2rem 3rem;
+}
+
+/* === SECTIONS === */
+section {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow:
+    0 0 15px #007bff33,
+    0 0 30px #007bff22;
+  border-left: 8px solid #007bff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 0 20px #007bff66,
+    0 0 40px #007bff55;
+}
+
+/* === TITLES === */
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #0059c1;
+  font-weight: 800;
+  text-shadow: 0 0 8px #007bffbb;
+}
+
+/* === LISTES === */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  background: #f0f7ff;
+  border-radius: 6px;
+  margin-bottom: 0.7rem;
+  padding: 0.7rem 1rem;
+  border-left: 5px solid #007bff;
+  font-family: 'Courier New', monospace;
+  color: #003366;
+  box-shadow: 0 0 5px #007bff33;
+  cursor: pointer;
+  position: relative;
+  user-select: all;
+  transition: background 0.3s ease;
+}
+
+li:hover {
+  background: #d1e4ff;
+  box-shadow: 0 0 10px #007bff88;
+}
+
+/* === CODE STYLE === */
+code {
+  color: #0047b3;
+  font-weight: 700;
+}
+
+/* === BOUTONS COPIER === */
+.copy-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007bff;
+  border: none;
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+}
+
+/* === FOOTER === */
+footer {
+  background: #ffffffcc;
+  text-align: center;
+  color: #0059c1;
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-top: 3px solid #007bff;
+  box-shadow: 0 0 15px #007bff88;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Astuces - IA Companion</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Astuces</h1>
+    <nav>
+      <a href="/">Accueil</a>
+      <a href="/prompts">Prompts</a>
+      <a href="/guides">Guides</a>
+      <a href="/arena">Arena</a>
+      <% if (user) { %>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Déconnexion</a>
+      <% } else { %>
+        <a href="/login">Connexion</a>
+        <a href="/register">Inscription</a>
+      <% } %>
+    </nav>
+  </header>
+
+  <main>
+    <ul>
+      <% astuces.forEach(astuce => { %>
+        <li><%= astuce.texte %></li>
+      <% }) %>
+    </ul>
+  </main>
+</body>
+</html>

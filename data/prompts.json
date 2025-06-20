@@ -1,0 +1,112 @@
+{
+  "productivité": [
+    {
+      "prompt": "Organise ma journée avec la méthode Pomodoro en intégrant pauses, repas, et tâches profondes."
+    },
+    {
+      "prompt": "Gère mon agenda de la semaine pour équilibrer travail, sport et vie sociale."
+    },
+    {
+      "prompt": "Suggère une routine matinale efficace pour booster ma concentration dès 7h du matin."
+    }
+  ],
+  "business": [
+    {
+      "prompt": "Propose-moi 3 idées de startups SaaS innovantes en 2025 avec un modèle freemium."
+    },
+    {
+      "prompt": "Élabore un pitch elevator pour une application mobile de méditation pour étudiants."
+    },
+    {
+      "prompt": "Rédige un business plan simple pour une boutique e-commerce de produits zéro-déchet."
+    }
+  ],
+  "rédaction": [
+    {
+      "prompt": "Écris un post LinkedIn sur l’importance du storytelling dans le marketing."
+    },
+    {
+      "prompt": "Transforme ce paragraphe banal en contenu engageant pour les réseaux sociaux."
+    },
+    {
+      "prompt": "Crée une newsletter mensuelle sur les tendances tech en moins de 500 mots."
+    }
+  ],
+  "développement": [
+    {
+      "prompt": "Code un script en Node.js qui vérifie si un site web est en ligne toutes les 5 minutes."
+    },
+    {
+      "prompt": "Donne un exemple d'exploit XSS simple sur un formulaire mal protégé."
+    },
+    {
+      "prompt": "Explique-moi la différence entre les promesses, les callbacks et async/await en JavaScript."
+    }
+  ],
+  "design": [
+    {
+      "prompt": "Crée une interface minimaliste pour une app de méditation (couleurs, typos, ambiance)."
+    },
+    {
+      "prompt": "Propose un logo vectoriel pour une marque de tech éco-responsable."
+    },
+    {
+      "prompt": "Donne des idées d’animations CSS subtiles pour un site de portfolio de développeur."
+    }
+  ],
+  "apprentissage": [
+    {
+      "prompt": "Explique les bases de l’algorithmique en termes simples pour un débutant."
+    },
+    {
+      "prompt": "Fais une fiche de révision pour comprendre les fonctions dérivées en maths."
+    },
+    {
+      "prompt": "Donne un plan d’étude pour apprendre Python en 21 jours (avec objectifs quotidiens)."
+    }
+  ],
+  "coaching": [
+    {
+      "prompt": "Agis comme un coach mental et motive-moi à surmonter la procrastination."
+    },
+    {
+      "prompt": "Donne-moi 10 affirmations puissantes à répéter pour booster ma confiance au quotidien."
+    },
+    {
+      "prompt": "Pose-moi des questions introspectives pour m’aider à mieux me connaître."
+    }
+  ],
+  "seo": [
+    {
+      "prompt": "Crée une stratégie SEO pour un blog de développement personnel ciblant les jeunes adultes."
+    },
+    {
+      "prompt": "Liste les 5 erreurs SEO les plus fréquentes et comment les corriger."
+    },
+    {
+      "prompt": "Fais une recherche de mots-clés autour de 'formation en ligne IA gratuite'."
+    }
+  ],
+  "data": [
+    {
+      "prompt": "Explique la différence entre machine learning supervisé et non supervisé avec des exemples."
+    },
+    {
+      "prompt": "Code une analyse de données simple avec pandas et matplotlib à partir d’un fichier CSV."
+    },
+    {
+      "prompt": "Fais un résumé clair de ce que fait un data scientist dans une startup tech."
+    }
+  ],
+  "traduction": [
+    {
+      "prompt": "Traduis ce message en anglais professionnel : 'Merci pour votre retour rapide, je m’en occupe.'"
+    },
+    {
+      "prompt": "Corrige ce texte pour qu’il soit fluide et naturel : 'He have make a mistake in his code.'"
+    },
+    {
+      "prompt": "Transforme ce paragraphe du français familier vers un style formel pour un rapport."
+    }
+  ]
+}

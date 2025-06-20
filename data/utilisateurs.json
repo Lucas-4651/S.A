@@ -1,0 +1,13 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "historique": [
+      "Écris un poème triste sur l’IA",
+      "Trouve une idée de startup basée sur GPT-4"
+    ],
+    "promptsFavoris": [
+      "Crée un script pour générer des avatars IA automatiquement"
+    ]
+  }
+]
